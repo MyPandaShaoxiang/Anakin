@@ -94,6 +94,10 @@ TEST(TestSaberFunc, test_func_pool)
 #ifdef USE_CUDA
     test_pad<NV, NVHX86, AK_FLOAT>();
 #endif
+#ifdef USE_X86_PLACE
+    test_pad<X86, X86, AK_FLOAT>();
+#endif
+
 }
 
 int main(int argc, const char** argv) {

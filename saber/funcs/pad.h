@@ -23,6 +23,9 @@
 #ifdef NVIDIA_GPU
 #include "saber/funcs/impl/cuda/saber_pad.h"
 #endif
+#ifdef USE_X86_PLACE
+#include "saber/funcs/impl/x86/saber_pad.h"
+#endif
 
 
 namespace anakin {

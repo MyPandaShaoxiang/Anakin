@@ -56,9 +56,11 @@ SaberStatus SaberPad<NV, OpDtype>::dispatch(\
                  _in_c_stride, _in_h_stride, _in_w_stride,\
                  _out_n_stride, _out_c_stride, _out_h_stride, _out_w_stride,\
                  in_n, in_c, in_h, in_w, count);
-    }
-
-    return SaberSuccess;
+        return SaberSuccess;
+} else {
+        LOG(ERROR)<<"pad only support tensor with continue memory";
+        return SaberUnImplError;
+}
 }
 DEFINE_OP_TEMPLATE(SaberPad, PadParam, NV, AK_INT16);
 DEFINE_OP_TEMPLATE(SaberPad, PadParam, NV, AK_INT8);
